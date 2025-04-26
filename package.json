@@ -1,0 +1,15 @@
+{
+  "name": "api-chat-whatsapp",
+  "version": "1.0.0",
+  "description": "API de chat para bot de WhatsApp con historial",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "*",
+    "dotenv": "*",
+    "express": "*",
+    "mongoose": "*"
+  }
+}
