@@ -8,8 +8,6 @@
   },
   "dependencies": {
     "axios": "*",
-    "dotenv": "*",
-    "express": "*",
-    "mongoose": "*"
+    "express": "*"
   }
 }
