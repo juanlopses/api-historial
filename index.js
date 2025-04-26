@@ -1,14 +1,18 @@
 const express = require('express');
 const fs = require('fs');
 const axios = require('axios');
-require('dotenv').config();
 
 const app = express();
 app.use(express.json());
 
 const PUERTO = process.env.PORT || 3000;
 const ARCHIVO_CONVERSACIONES = 'conversaciones.json';
-const TOKEN_API_CHUTES = process.env.CHUTES_API_TOKEN;
+
+// ==================================================
+// CLAVE DE LA API DE CHUTES AI
+// Reemplaza 'tu_clave_api_chutes_aqui' con tu clave real de Chutes AI
+const CLAVE_API_CHUTES = 'cpk_18fba748a1134d63be05eeacd5248cef.55bc34ef087a520ea54f87e1a2af4553.4JchmGF7ZnlzYVF83s7BNaegO7kMdbfm';
+// ==================================================
 
 // Inicializar archivo JSON si no existe
 if (!fs.existsSync(ARCHIVO_CONVERSACIONES)) {
@@ -70,7 +74,7 @@ app.post('/api/chat', async (req, res) => {
       },
       {
         headers: {
-          'Authorization': `Bearer ${TOKEN_API_CHUTES}`,
+          'Authorization': `Bearer ${CLAVE_API_CHUTES}`,
           'Content-Type': 'application/json'
         }
       }
