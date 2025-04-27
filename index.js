@@ -30,6 +30,39 @@ function guardarConversaciones(conversaciones) {
   fs.writeFileSync(ARCHIVO_CONVERSACIONES, JSON.stringify(conversaciones, null, 2));
 }
 
+// GET / - Página principal con mensaje
+app.get('/', (req, res) => {
+  res.send(`
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>API Activa</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          background-color: #f0f0f0;
+        }
+        h1 {
+          color: #333;
+          text-align: center;
+          font-size: 2.5em;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>API activa para dani xd by kenn (esto es pa k la api no perda el historial XD</h1>
+    </body>
+    </html>
+  `);
+});
+
 // POST /api/chat - Procesar mensaje de WhatsApp
 app.post('/api/chat', async (req, res) => {
   try {
